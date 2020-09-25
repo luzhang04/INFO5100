@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 class Employee {
@@ -82,7 +83,7 @@ public class Assignment2_1 {
         employeeList.add(e1);
         employeeList.add(e2);
         employeeList.add(e3);
-        employeeList.sort((a, b) -> (int) (a.salary - b.salary));
+        employeeList.sort(Comparator.comparingDouble(a -> a.salary));
         for (Employee employee : employeeList) {
             System.out.print(employee.getName() + " ");
         }
@@ -122,8 +123,8 @@ public class Assignment2_1 {
     */
     public static void main(String[] args) {
         Assignment2_1 ass2_1 = new Assignment2_1();
-        Employee e1 = new Employee("Jenny", 20, Gender.FEMALE, 2000);
-        Employee e2 = new Employee("John", 50, Gender.MALE, 2500);
+        Employee e1 = new Employee("Jenny", 20, Gender.FEMALE, 2000.1);
+        Employee e2 = new Employee("John", 50, Gender.MALE, 2000);
         Employee e3 = new Employee("Jina", 70, Gender.FEMALE, 7000);
 
         System.out.println(ass2_1.socialSecurityTax(e1));
